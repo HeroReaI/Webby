@@ -1,0 +1,79 @@
+/* Reset and general styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #1f1f1f;
+    color: #fff;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Top Navigation Buttons */
+.top-nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.nav-btn {
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+    border-radius: 8px;
+    background-color: #4a4a4a;
+    transition: background 0.3s, transform 0.2s;
+}
+
+.nav-btn:hover {
+    background-color: #ff8c00;
+    transform: scale(1.1);
+}
+
+/* Centered Buttons */
+.center-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: center;
+}
+
+.center-btn {
+    color: #fff;
+    text-decoration: none;
+    font-size: 20px;
+    padding: 15px 30px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.discord-btn {
+    background-color: #7289DA;
+}
+
+.discord-btn:hover {
+    background-color: #5b6eae;
+    transform: translateY(-5px);
+}
+
+.key-btn {
+    background-color: #ff6347;
+}
+
+.key-btn:hover {
+    background-color: #e5563d;
+    transform: translateY(-5px);
+}
