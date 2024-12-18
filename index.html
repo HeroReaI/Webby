@@ -7,11 +7,17 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <!-- Background Video -->
+    <video autoplay muted loop id="background-video">
+        <source src="your-video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+
     <!-- Top Navigation Buttons -->
     <div class="top-nav">
-        <a href="#about" class="nav-btn">About Us</a>
-        <a href="#credits" class="nav-btn">Credits</a>
-        <a href="#scripts" class="nav-btn">Scripts</a>
+        <a href="#" class="nav-btn" onclick="openAboutUs()">About Us</a>
+        <a href="#" class="nav-btn" onclick="openCredits()">Credits</a>
+        <a href="#" class="nav-btn" onclick="copyScript()">Scripts</a>
     </div>
 
     <!-- Centered Buttons -->
@@ -19,5 +25,43 @@
         <a href="https://discord.com" target="_blank" class="center-btn discord-btn">Join Discord</a>
         <a href="#key" class="center-btn key-btn">Get Key</a>
     </div>
+
+    <!-- Popup Modals -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <p id="modal-text"></p>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // Open "About Us" Modal
+        function openAboutUs() {
+            document.getElementById("modal-text").innerHTML = "Coming Soon<br>-- Stratos Team ❤️";
+            document.getElementById("modal").style.display = "block";
+        }
+
+        // Open "Credits" Modal
+        function openCredits() {
+            document.getElementById("modal-text").innerHTML = "Made By Valid, HeroReal, Paper";
+            document.getElementById("modal").style.display = "block";
+        }
+
+        // Copy Script to Clipboard
+        function copyScript() {
+            const script = 'loadstring(game:HttpGet("https://example.com/your-script"))()';
+            navigator.clipboard.writeText(script).then(() => {
+                alert("Script copied to clipboard!");
+            }).catch(err => {
+                console.error("Error copying script: ", err);
+            });
+        }
+
+        // Close Modal
+        function closeModal() {
+            document.getElementById("modal").style.display = "none";
+        }
+    </script>
 </body>
 </html>
